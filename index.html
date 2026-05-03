@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HealthGuard - Medication Reminder & Health Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <h1>HealthGuard</h1>
+        <p>Smart medication reminders and daily wellness tracking to support healthier routines.</p>
+      </div>
+      <div class="hero-card">
+        <h2>Next reminder</h2>
+        <p id="nextReminder">No reminders yet. Add a medication to get started.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="feature-grid">
+        <article>
+          <h2>Medication Schedule</h2>
+          <p>Store your medicine name, dose, frequency, and start time. HealthGuard reminds you when the next dose is due.</p>
+          <form id="medForm" class="card" autocomplete="off">
+            <div class="field-row">
+              <label for="medName">Medication name</label>
+              <input id="medName" type="text" required placeholder="E.g. Vitamin D" />
+            </div>
+            <div class="field-row">
+              <label for="dose">Dose</label>
+              <input id="dose" type="text" required placeholder="E.g. 1 tablet" />
+            </div>
+            <div class="field-row">
+              <label for="interval">Interval (hours)</label>
+              <input id="interval" type="number" min="1" max="24" value="8" required />
+            </div>
+            <div class="field-row">
+              <label for="startTime">Start time</label>
+              <input id="startTime" type="time" required />
+            </div>
+            <button type="submit" class="btn-primary">Add medication</button>
+          </form>
+        </article>
+
+        <article>
+          <h2>Daily Health Log</h2>
+          <p>Record your mood, sleep hours, and water intake to monitor wellbeing over time.</p>
+          <form id="logForm" class="card" autocomplete="off">
+            <div class="field-row">
+              <label for="mood">Mood</label>
+              <select id="mood" required>
+                <option value="">Select mood</option>
+                <option>Great</option>
+                <option>Good</option>
+                <option>Okay</option>
+                <option>Tired</option>
+                <option>Stressed</option>
+              </select>
+            </div>
+            <div class="field-row">
+              <label for="sleep">Sleep (hours)</label>
+              <input id="sleep" type="number" min="0" max="24" step="0.5" required />
+            </div>
+            <div class="field-row">
+              <label for="water">Water (glasses)</label>
+              <input id="water" type="number" min="0" max="20" required />
+            </div>
+            <button type="submit" class="btn-secondary">Save log</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="dashboard">
+        <div class="card">
+          <h2>Active Medications</h2>
+          <div id="medList">No medications added yet.</div>
+        </div>
+        <div class="card">
+          <h2>Recent Health Logs</h2>
+          <div id="logList">No health logs yet.</div>
+        </div>
+      </section>
+
+      <section class="summary-card card">
+        <div>
+          <h2>How it helps</h2>
+          <ul>
+            <li>Reduces missed medication doses with clear reminders.</li>
+            <li>Helps users track daily health behavior over time.</li>
+            <li>Supports better sleep, hydration, and wellbeing decisions.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>HealthGuard by Satyam | SDG 3: Good Health and Well-being</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
